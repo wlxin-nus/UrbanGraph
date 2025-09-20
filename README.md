@@ -6,7 +6,7 @@ Our work introduces T-DRGCN, a computationally efficient spatio-temporal forecas
 
 **Introduction** *Increasing exposure to extreme heat threatens the sustainability of global urban settlements. However, accurate urban microclimate forecasting is hindered by the failure of existing methods to account for the time-varying nature of physical interactions among urban elements. To bridge this gap, we introduce a physics-informed dynamic graph representation and a computationally efficient spatio-temporal forecasting architecture, T-DRGCN. Our graph representation explicitly encodes time-varying physical processes, such as shadowing and wind convection, into the graph topology, demonstrating strong generalization capabilities across multiple prediction targets. To rigorously evaluate our framework, we construct a new high-fidelity benchmark dataset, UMC4/12, covering 12 hours of microclimate and thermal comfort data for 396 urban plots in Singapore. Experiments show that our T-DRGCN architecture achieves competitive predictive performance (a 1.42% reduction in RMSE) compared to the next-best baseline while significantly reducing computational overhead: theoretical computations (FLOPs) are reduced by 13.0%, with training and inference times shortened by 33.4% and 25.3%, respectively. Our work provides a new method and benchmark for urban microclimate research.*
 
-\<\![T-DRGCN.png](assets/T-DRGCN.png) \--\>
+<img width="723" height="515" alt="T-DRGCN" src="https://github.com/user-attachments/assets/1ff548ae-60cc-4aec-a12f-6894d9408fa1" />
 
 
 
@@ -23,21 +23,21 @@ T-DRGCN\_Urban\_Microclimate/
 ├── README.md  
 ├── LICENSE  
 ├── requirements.txt  
-├── data/                  \# 数据文件夹  
+├── data/                   
 │   ├── Input/  
 │   ├── Output/  
 │   └── SGP\_...\_EPW.csv  
-├── src/                   \# 源代码模块  
+├── src/                   
 │   ├── \_\_init\_\_.py  
 │   ├── data\_processing.py  
 │   ├── graph\_construction.py  
 │   ├── models.py  
 │   ├── engine.py  
 │   └── utils.py  
-├── scripts/               \# 可执行脚本  
+├── scripts/                
 │   ├── build\_graph\_data.py  
 │   └── train.py  
-└── checkpoints/           \# 预训练模型权重  
+└── checkpoints/           
     └── TDRGCN\_seed43/  
         ├── best\_tdrgcn\_model\_seed43.pth  
         ├── node\_feature\_scaler\_seed43.pth  
@@ -47,8 +47,8 @@ T-DRGCN\_Urban\_Microclimate/
 ## **Setup & Installation**
 
 1. **Clone the repository:**  
-   git clone \[https://github.com/wlxin-nus/UrbanGraph.git](https://github.com/wlxin-nus/UrbanGraph.git)  
-   cd T-DRGCN-Urban-Microclimate
+   git clone \[https://github.com/wlxin-nus/UrbanGraph.git]
+   cd UrbanGraph-main
 
 2. Create a Python environment and install dependencies:  
    We recommend using Conda for environment management.  
