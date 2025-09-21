@@ -120,14 +120,4 @@ Our proposed T-DRGCN model achieves state-of-the-art performance on the UTCI pre
 | RGCN+Transformer | 50.9 | 37.65 | 3.33 | 0.8465 | 1.0791 |
 | **T-DRGCN (Ours)** | **9.13** | **24.48** | **2.69** | **0.8542** | **1.0535** |
 
-## **Citation**
 
-If you find our work useful for your research, please consider citing our paper:
-
-@inproceedings{  
-  xin2026tdrgcn,  
-  title={\[UrbanGraph: Physics-Informed Spatio-Temporal Dynamic Heterogeneous Graphs for Urban Microclimate Prediction\]},  
-  author={\[Weilin Xin and Chenyu Huang and Peilin Li and Jing Zhong \]},  
-  booktitle={The Fourteenth International Conference on Learning Representations},  
-  year={2026}
-}  
