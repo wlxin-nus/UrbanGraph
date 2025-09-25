@@ -2,9 +2,9 @@
 
 This repository contains the official PyTorch implementation and the **UMC4/12 Dataset** for the paper: **\[UrbanGraph: Physics-Informed Spatio-Temporal Dynamic Heterogeneous Graphs for Urban Microclimate Prediction\]**.
 
-Our work introduces T-DRGCN, a computationally efficient spatio-temporal forecasting architecture, coupled with a novel physics-informed dynamic graph representation for highly accurate urban microclimate prediction.
+Our work introduces UrbanGraph, a computationally efficient spatio-temporal forecasting architecture, coupled with a novel physics-informed dynamic graph representation for highly accurate urban microclimate prediction.
 
-**Introduction** *Increasing exposure to extreme heat threatens the sustainability of global urban settlements. However, accurate urban microclimate forecasting is hindered by the failure of existing methods to account for the time-varying nature of physical interactions among urban elements. To bridge this gap, we introduce a physics-informed dynamic graph representation and a computationally efficient spatio-temporal forecasting architecture, T-DRGCN. Our graph representation explicitly encodes time-varying physical processes, such as shadowing and wind convection, into the graph topology, demonstrating strong generalization capabilities across multiple prediction targets. To rigorously evaluate our framework, we construct a new high-fidelity benchmark dataset, UMC4/12, covering 12 hours of microclimate and thermal comfort data for 396 urban plots in Singapore. Experiments show that our T-DRGCN architecture achieves competitive predictive performance (a 1.42% reduction in RMSE) compared to the next-best baseline while significantly reducing computational overhead: theoretical computations (FLOPs) are reduced by 13.0%, with training and inference times shortened by 33.4% and 25.3%, respectively. Our work provides a new method and benchmark for urban microclimate research.*
+**Introduction** *With rapid urbanization, predicting urban microclimates has become critical, as it affects building energy demand and public health risks. However, existing generative and homogeneous graph approaches fall short in capturing physical consistency, spatial dependencies, and temporal variability. To address this, we introduce UrbanGraph, a physics-informed framework integrating heterogeneous and dynamic spatio-temporal graphs. It encodes key physical processes—vegetation evapotranspiration, shading, and convective diffusion—while modeling complex spatial dependencies among diverse urban entities and their temporal evolution. We evaluate UrbanGraph on UMC4/12, a physics-based simulation dataset covering diverse urban configurations and climates. Results show that UrbanGraph improves R² by up to 10.8\% and reduces FLOPs by 17.0\% over all baselines, with heterogeneous and dynamic graphs contributing 3.5\% and 7.1\% gains. Our dataset provides the first high-resolution benchmark for spatio-temporal microclimate modeling, and our method extends to broader urban heterogeneous dynamic computing tasks. *
 
 ![Model Architecture](./assets/T-DRGCN.png)
 
@@ -13,13 +13,13 @@ Our work introduces T-DRGCN, a computationally efficient spatio-temporal forecas
 ## **Key Features**
 
 * **Physics-Informed Dynamic Graphs**: Explicitly encodes time-varying physical processes like shadowing, vegetation activity, and local wind fields into the graph topology on an hourly basis.  
-* **T-DRGCN Architecture**: A novel and efficient spatio-temporal network (our main contribution) composed of Feature Encoders, a Spatial Graph Encoder (RGCN), a Spatio-Temporal Evolution Module (LSTM), and a Prediction Head.  
+* **UrbanGraph**: A novel and efficient spatio-temporal network (our main contribution) composed of Feature Encoders, a Spatial Graph Encoder (RGCN), a Spatio-Temporal Evolution Module (LSTM), and a Prediction Head.  
 * **UMC4/12 Dataset**: A new high-fidelity benchmark dataset with 4-meter resolution data for 396 urban plots in Singapore, covering 12 hours of 6 key microclimate variables, generated via ENVI-met simulations.  
 * **Reproducible Baselines**: Includes implementations for a wide range of baseline models from our paper for fair and comprehensive comparison.
 
 ## **Repository Structure**
 
-T-DRGCN\_Urban\_Microclimate/  
+UrbanGraph
 ├── README.md  
 ├── LICENSE  
 ├── requirements.txt  
@@ -69,9 +69,9 @@ python scripts/build\_graph\_data.py \\
     \--save\_dir ./data/processed
 
 2\. Model Training:  
-Use the unified train.py script to train our proposed model (TDRGCN) or any of the baseline models. You can specify the model using the \--model\_name argument.
+Use the unified train.py script to train our proposed model (UrbanGraph) or any of the baseline models. You can specify the model using the \--model\_name argument.
 
-* **Train our model (T-DRGCN):**  
+* **Train our model (UrbanGraph):**  
   python scripts/train.py \\  
       \--data\_path ./data/processed/graph\_sequences.pkl \\  
       \--model\_name TDRGCN \\  
@@ -95,7 +95,7 @@ For a full list of configurable hyperparameters, please run python scripts/train
 
 ## **Pre-trained Models**
 
-We provide the pre-trained weights for our main model, T-DRGCN (reported in the paper), to facilitate quick inference and reproduction.
+We provide the pre-trained weights for our main model, UrbanGraph (reported in the paper), to facilitate quick inference and reproduction.
 
 The checkpoint is located in the checkpoints/TDRGCN\_seed43/ directory and includes:
 
@@ -118,6 +118,6 @@ Our proposed T-DRGCN model achieves state-of-the-art performance on the UTCI pre
 | GGAN+LSTM | 9.44 | 42.47 | 2.65 | 0.8415 | 1.0981 |
 | RGCN+GRU | 7.12 | 20.81 | 2.16 | 0.8483 | 1.0682 |
 | RGCN+Transformer | 50.9 | 37.65 | 3.33 | 0.8465 | 1.0791 |
-| **T-DRGCN (Ours)** | **9.13** | **24.48** | **2.69** | **0.8542** | **1.0535** |
+| **UrbanGraph (Ours)** | **9.13** | **24.48** | **2.69** | **0.8542** | **1.0535** |
 
 
